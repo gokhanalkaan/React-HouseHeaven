@@ -56,7 +56,8 @@ export const getHouses=async(req,res) =>{
       saloon:isNaN(saloon)?{$gte:1,$lte:100}:saloon ,
       bathroom:isNaN(bathroom)?{$gte:1,$lte:100}:bathroom ,
       floors:isNaN(floors)?{$gte:0,$lte:100}:floors, 
-      pool:true 
+      pool:true,
+     stars:isNaN(stars)?{$gte:0,$lte:5}:stars,  
       
     
      // stars:isNaN(stars)?{$gte:1,$lte:5}:stars,  
@@ -93,7 +94,8 @@ export const getHouses=async(req,res) =>{
         saloon:isNaN(saloon)?{$gte:1,$lte:100}:saloon ,
         bathroom:isNaN(bathroom)?{$gte:1,$lte:100}:bathroom ,
         floors:isNaN(floors)?{$gte:0,$lte:100}:floors, 
-        garden:true 
+        garden:true,
+        stars:isNaN(stars)?{$gte:0,$lte:5}:stars,  
         
       
        // stars:isNaN(stars)?{$gte:1,$lte:5}:stars,  
@@ -131,7 +133,8 @@ export const getHouses=async(req,res) =>{
       room:isNaN(room)?{$gte:1,$lte:100}:room ,
       saloon:isNaN(saloon)?{$gte:1,$lte:100}:saloon ,
       bathroom:isNaN(bathroom)?{$gte:1,$lte:100}:bathroom ,
-      floors:isNaN(floors)?{$gte:0,$lte:100}:floors, 
+      floors:isNaN(floors)?{$gte:0,$lte:100}:floors,
+      stars:isNaN(stars)?{$gte:0,$lte:5}:stars,  
      
       
     
@@ -174,7 +177,8 @@ export const getHouses=async(req,res) =>{
       floors:isNaN(floors)?{$gte:0,$lte:100}:floors,  
       
       garden,
-      pool
+      pool,
+        stars:isNaN(stars)?{$gte:0,$lte:5}:stars,  
      // stars:isNaN(stars)?{$gte:1,$lte:5}:stars,  
   
    
