@@ -22,8 +22,9 @@ const HouseSchema = new mongoose.Schema(
     },
     stars: {
       type: Number,
-      min:1,
-      max:5
+      
+      max:5,
+      default:0
       
     },
     homeType:{
