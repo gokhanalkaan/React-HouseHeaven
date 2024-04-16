@@ -10,15 +10,15 @@ export const makePayment=async(req,res) =>{
    
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-    const gig = await House.findById(req.params.id);
+    const house = await House.findById(req.params.id);
     console.log(req.body.dates);
 
-    console.log(gig.price)
+    console.log(house.price)
     //const datesVal=req.body.dates.split(",")
   
   
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: gig.price * 100*req.body.dates.length,
+      amount: house.price * 100*req.body.dates.length,
       currency: "usd",
       automatic_payment_methods: {
         enabled: true,
@@ -27,8 +27,8 @@ export const makePayment=async(req,res) =>{
   
     const newOrder = new Reservation({
      userId:req.body.userId,
-     houseId:gig._id,
-      price: gig.price,
+     houseId:house._id,
+      price: house.price,
       payment_intent: paymentIntent.id,
       dates:req.body.dates
     });
